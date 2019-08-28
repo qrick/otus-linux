@@ -7,7 +7,7 @@
 ~# tar -xvf linux-5.2.10.tar.xz
 ~# cd linux-5.2.10
 ~# cp -v /boot/config-3.10.0-957.12.2.el7.x86_64 .config
-~# ~# make olddefconfig
+~# make olddefconfig
 ```
 
 Поправить параметры в конфиге:
