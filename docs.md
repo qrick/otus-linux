@@ -7,6 +7,7 @@
 ~# tar -xvf linux-5.2.10.tar.xz
 ~# cd linux-5.2.10
 ~# cp -v /boot/config-3.10.0-957.12.2.el7.x86_64 .config
+~# ~# make olddefconfig
 ```
 
 Поправить параметры в конфиге:
@@ -14,7 +15,7 @@
 ~# sed -i "s/CONFIG_KVM_GUEST=.*/CONFIG_KVM_GUEST=y/" .config
 ~# sed -i "s/CONFIG_VIRTIO_PCI=.*/CONFIG_VIRTIO_PCI=y/" .config
 ~# sed -i "s/CONFIG_VIRTIO_PCI_LEGACY=.*/CONFIG_VIRTIO_PCI_LEGACY=y/" .config
-~# sed -i "s/CONFIG_BLK_DEV_S.*/CONFIG_BLK_DEV_SD/" .config
+~# sed -i "s/CONFIG_BLK_DEV_SD=.*/CONFIG_BLK_DEV_SD=y/" .config
 ~# sed -i "s/CONFIG_SCSI_VIRTIO=.*/CONFIG_SCSI_VIRTIO=y/" .config
 ~# sed -i "s/CONFIG_VIRTIO_NET=.*/CONFIG_VIRTIO_NET=y/" .config
 ~# sed -i "s/CONFIG_SERIAL_8250=.*/CONFIG_SERIAL_8250=y/" .config
@@ -24,7 +25,6 @@
 
 Собираем и устанавливаем:
 ```
-~# make olddefconfig
 ~# make -j3
 ~# make modules_install
 ~# make install
